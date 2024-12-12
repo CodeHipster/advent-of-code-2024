@@ -39,17 +39,12 @@ private fun solve(test: Test): Boolean {
         val newStates = listOf(
             State(currentState.left + nextValue, remainingValues),
             State(currentState.left * nextValue, remainingValues),
-            State(currentState.left concat nextValue, remainingValues),
         )
 
         states.addAll(newStates)
         states.sort()
     }
     return false
-}
-
-infix fun Long.concat(other: Long): Long {
-    return (this.toString() + other.toString()).toLong()
 }
 
 class State(val left: Long, val right: List<Long>) : Comparable<State> {
