@@ -10,6 +10,7 @@ fun main() {
 
     val wanted = program.asIntList()
 
+    // w'll can't brute force it.
     for (i in 0 until 100000000){
         computer.registerA = i
         val result = computer.process(program)
