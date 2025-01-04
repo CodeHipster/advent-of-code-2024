@@ -47,6 +47,11 @@ data class Grid<T>(val grid: List<MutableList<T>>) {
         }
     }
 
+    @Override
+    override fun toString(): String {
+        return grid.joinToString("\n") { line -> line.joinToString("") }
+    }
+
     companion object {
         fun fromText(text: List<String>): Grid<Char> {
             val tiles = text.map { row ->
